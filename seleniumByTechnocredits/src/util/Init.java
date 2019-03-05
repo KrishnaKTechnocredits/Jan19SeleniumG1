@@ -22,9 +22,10 @@ public class Init {
 		// If block is for mac users 
 		String osName = System.getProperty("os.name");
 		if (osName.indexOf("Mac") > -1) {
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + File.separator + "resources" + File.separator + "chromedriver");
-		} else {
+			System.setProperty("webdriver.chrome.driver", ConstantPath.CHROME_MAC_PATH);
+		}
+		//Else block is for windows users
+		else {
 			System.setProperty("webdriver.driver.chromedriver", ConstantPath.CHROME_EXE_PATH);
 		}
 		driver = new ChromeDriver();
