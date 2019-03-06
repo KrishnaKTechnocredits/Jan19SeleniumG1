@@ -26,7 +26,7 @@ public class Init {
 		}
 		//Else block is for windows users
 		else {
-			System.setProperty("webdriver.driver.chromedriver", ConstantPath.CHROME_EXE_PATH);
+			System.setProperty("webdriver.chrome.driver", ConstantPath.CHROME_EXE_PATH);
 		}
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
