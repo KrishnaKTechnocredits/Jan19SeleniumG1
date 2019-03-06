@@ -1,8 +1,5 @@
 package util;
 
-import java.io.File;
-import java.net.URL;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -16,7 +13,7 @@ public class Init {
 		return driver;
 	}
 
-	// Method to open chrome browser
+	// Method to open Chrome browser
 	public static WebDriver initChromeDriver() {
 		WebDriver driver = null;
 		// If block is for mac users 
