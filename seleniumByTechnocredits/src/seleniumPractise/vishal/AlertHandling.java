@@ -49,6 +49,8 @@ public class AlertHandling extends MasterClass {
 
 		else {
 			System.out.println("Alert is showing wrong data");
+			alert.accept();
+
 		}
 
 	}
@@ -75,6 +77,8 @@ public class AlertHandling extends MasterClass {
 			System.out.println("Alert Accepted");
 		} else {
 			System.out.println("Alert message is not correct");
+			alert.accept();
+
 		}
 	}
 
@@ -90,6 +94,7 @@ public class AlertHandling extends MasterClass {
 			System.out.println("Text is correct after cancle");
 		} else {
 			System.out.println("Text is not correct after cancel");
+
 		}
 
 		// driver.findElement(By.xpath("//button[@id='javascriptConfirmBox']")).click();
@@ -101,6 +106,7 @@ public class AlertHandling extends MasterClass {
 			System.out.println("Text is correct after Ok");
 		} else {
 			System.out.println("Text is not correct after Ok");
+
 		}
 
 	}

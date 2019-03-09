@@ -41,6 +41,8 @@ public class LoginRegistration extends MasterClass {
 
 		else {
 			System.out.println("Alert text is not correct");
+			alert.accept();
+
 		}
 
 	}
@@ -78,6 +80,8 @@ public class LoginRegistration extends MasterClass {
 			alert.accept();
 		} else {
 			System.out.println("Alert is not correct");
+			alert.accept();
+
 		}
 
 		driver.findElement(By.xpath("//input[@id='fullName']")).sendKeys(prop.getProperty("firstname"));
@@ -91,6 +95,8 @@ public class LoginRegistration extends MasterClass {
 
 		else {
 			System.out.println("Alert text is not correct");
+			alert.accept();
+
 		}
 
 		driver.findElement(By.xpath("//input[@id='address']")).sendKeys(prop.getProperty("location"));
@@ -104,6 +110,8 @@ public class LoginRegistration extends MasterClass {
 
 		else {
 			System.out.println("Alert text is not correct");
+			alert.accept();
+
 		}
 
 		driver.findElement(By.xpath("//input[@id='useremail']")).sendKeys(prop.getProperty("email"));
@@ -118,6 +126,8 @@ public class LoginRegistration extends MasterClass {
 
 		else {
 			System.out.println("Alert text is not correct");
+			alert.accept();
+
 		}
 
 		driver.findElement(By.xpath("//input[@id='usercity']")).sendKeys(prop.getProperty("city"));
@@ -132,6 +142,8 @@ public class LoginRegistration extends MasterClass {
 
 		else {
 			System.out.println("Alert text is not correct");
+			alert.accept();
+
 		}
 
 		driver.findElement(By.xpath("//input[@id='organization']")).sendKeys(prop.getProperty("company"));
@@ -147,6 +159,8 @@ public class LoginRegistration extends MasterClass {
 
 		else {
 			System.out.println("Alert text is not correct");
+			alert.accept();
+
 		}
 
 	}
