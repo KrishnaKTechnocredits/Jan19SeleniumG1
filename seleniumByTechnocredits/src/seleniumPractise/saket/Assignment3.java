@@ -19,7 +19,7 @@ public class Assignment3 {
 		driver.manage().window().maximize();
 		driver.findElement(By.id("basicelements")).click();
 		Thread.sleep(2000);
-		WebElement element = driver.findElement(By.xpath("	//button[contains(@id,'javascriptConfirmBox')]"));
+		WebElement element = driver.findElement(By.xpath("//button[contains(@id,'javascriptConfirmBox')]"));
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true)", element);
@@ -30,19 +30,10 @@ public class Assignment3 {
 
 		alert.accept();
 		Thread.sleep(3000);
-
-		/*
-		 * JavascriptExecutor js1 = (JavascriptExecutor) driver;
-		 * js1.executeScript("arguments[0].scrollIntoView(true)", element);
-		 */
-
 		String actualvalue = driver.findElement(By.xpath("//p[text()='You pressed OK!' and @id='pgraphdemo']"))
 				.getText();
 
 		String Expectedvalue = "You pressed OK!";
-
-		//System.out.println(actualvalue);
-	//	System.out.println(Expectedvalue);
 
 		if (actualvalue.equals(Expectedvalue))
 
@@ -57,10 +48,6 @@ public class Assignment3 {
 
 		String actual = driver.findElement(By.xpath("//p[text()='You pressed Cancel!']")).getText();
 		String Expected2 = "You pressed Cancel!";
-		
-		
-		//System.out.println(actual);
-			//System.out.println(Expected2);
 
 		if (actual.equals(Expected2)) {
 			System.out.println("Cancel Alert message retrived is as per the expectations");
@@ -68,6 +55,7 @@ public class Assignment3 {
 		} else {
 			System.out.println("Cancel Alert message retrived is not per the expectations");
 		}
+		driver.close();
 	}
 
 }

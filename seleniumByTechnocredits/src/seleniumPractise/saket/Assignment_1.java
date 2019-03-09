@@ -1,6 +1,5 @@
 package seleniumPractise.saket;
 
-import org.omg.Messaging.SyncScopeHelper;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -35,28 +34,40 @@ public class Assignment_1 {
 		Alert alert = driver.switchTo().alert();
 
 		String a = alert.getText();
+		String expected = b + " and " + c + " and " + d;
 		System.out.println(a);
+		System.out.println(expected);
 
-		String[] words = a.split("and");
+		/*
+		 * System.out.println(a);
+		 * 
+		 * String[] words = a.split("and");
+		 * 
+		 * 
+		 * 
+		 * String input = (b.concat(c).concat(d)); System.out.println("Input" +
+		 * input); String expected = "";
+		 * 
+		 * for (int i = 0; i <= words.length - 1; i++) {
+		 * 
+		 * expected = expected + words[i];
+		 * 
+		 * } System.out.print(expected);
+		 * 
+		 * a = expected.replaceAll("\\s", "");
+		 * 
+		 * System.out.println(a);
+		 */
 
-		String input = (b.concat(c).concat(d));
-		System.out.println("Input" + input);
-		String expected = "";
-
-		for (int i = 0; i <= words.length - 1; i++) {
-
-			expected = expected + words[i];
-
-		}
-		System.out.print(expected);
-
-		a = expected.replaceAll("\\s", "");
-
-		System.out.println(a);
-
-		if (a.equals((input))) {
+		if (a.equals(expected)) {
 			System.out.println("Succesfully compared the input with the alert and it is matching");
+		} else {
+			System.out.println("comparison of the input with the alert and is not matching ");
+
 		}
+
+		alert.accept();
+		driver.close();
 
 	}
 }

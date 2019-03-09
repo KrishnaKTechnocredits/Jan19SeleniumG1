@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By;
 
 import util.Init;
 
@@ -34,12 +33,16 @@ public class Assignment2 {
 
 		if (alerttext.equals(expectedtext)) {
 			System.out.println("both strings are equal");
+		
 
 		} else {
 
 			System.out.println("not equal");
 
 		}
+		
+		alert.accept();
+		driver.close();
 
 	}
 
