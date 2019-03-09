@@ -16,13 +16,8 @@ public class Homework2 {
 		WebDriver driver = Init.initChromeDriver();
 		driver.get("http://automationbykrishna.com/index.html#");
 		Thread.sleep(1000);
-		// Finding xpath using partial link text also using xpath
-		// driver.findElement(By.partialLinkText("Elements")).click();
 		driver.findElement(By.xpath("//a[@id='basicelements']")).click();
 		System.out.println("Clicked on Basic elements");
-		// WebElement e1=
-		// driver.findElement(By.xpath("//button[starts-with(@id,'javascriptAlert')]"));----Xpath
-		// using starts with
 		Thread.sleep(2000);
 		WebElement e1 = driver.findElement(By.xpath("//button[@class='btn btn-success']"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
