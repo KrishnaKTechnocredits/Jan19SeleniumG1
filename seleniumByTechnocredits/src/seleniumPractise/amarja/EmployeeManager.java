@@ -28,7 +28,7 @@ public class EmployeeManager {
 		HashMap<String, Integer> hn = new HashMap<String, Integer>();
 		LinkedList<String> l1 = new LinkedList<String>();
 		LinkedList<String> l2 = new LinkedList<String>();
-		WebDriver driver = Init.getBrowerInstance();
+		WebDriver driver = Init.initChromeDriver();
 		driver.get("http://automationbykrishna.com/index.html#");
 		driver.findElement(By.xpath("//a[@id='demotable']")).click();
 		System.out.println("Able to click on demo");
