@@ -36,8 +36,10 @@ public class AlertDemo {
 			driver.switchTo().alert().accept();
 			System.out.println("Alert accepted");
 		} else {
+			driver.switchTo().alert().accept();
 			System.out.println("Wrong Message Displayed");
 		}
-
+	driver.close();
 	}
+	
 }
