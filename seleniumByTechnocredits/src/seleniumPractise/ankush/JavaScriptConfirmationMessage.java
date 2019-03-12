@@ -45,6 +45,6 @@ public class JavaScriptConfirmationMessage {
 		if (ActualCancelMessage.equals("You pressed Cancel!")) {
 			System.out.println("User Pressed on Cancel button");
 		}
-
+	driver.close();	
 	}
 }
