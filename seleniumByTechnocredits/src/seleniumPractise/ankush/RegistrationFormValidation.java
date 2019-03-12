@@ -58,6 +58,7 @@ public class RegistrationFormValidation {
 			driver.findElement(By.id("address")).sendKeys("Pune");
 			System.out.println("Address Entered");
 		} else
+			RegistrationFormValidation.alertHandling(driver)
 			System.out.println("Address Validation Failed");
 
 		// Other Email ID Validation Checks
@@ -69,6 +70,7 @@ public class RegistrationFormValidation {
 			driver.findElement(By.id("useremail")).sendKeys("test@test.com");
 			System.out.println("Other Email ID Entered");
 		} else
+			RegistrationFormValidation.alertHandling(driver)
 			System.out.println("Other Email ID Validation Failed");
 
 		// City Field Validation
@@ -85,6 +87,7 @@ public class RegistrationFormValidation {
 				driver.findElement(By.id("usercity")).sendKeys("Pune");
 				System.out.println("Valid City Entered");
 			} else
+				RegistrationFormValidation.alertHandling(driver)
 				System.out.println("Valid City Validation Failed");
 
 		}
@@ -99,6 +102,7 @@ public class RegistrationFormValidation {
 			System.out.println("Current Organization Entered");
 
 		} else
+			RegistrationFormValidation.alertHandling(driver)
 			System.out.println("Current Organization Validation Failed");
 
 		// User Name Name Field Validation
@@ -115,6 +119,7 @@ public class RegistrationFormValidation {
 				System.out.println("User Name Entered");
 
 			} else
+				RegistrationFormValidation.alertHandling(driver)
 				System.out.println("User Name Validation Failed");
 
 		}
@@ -132,6 +137,7 @@ public class RegistrationFormValidation {
 				System.out.println("Password Entered");
 
 			} else
+				RegistrationFormValidation.alertHandling(driver)
 				System.out.println("Password Validation Failed");
 
 		}
@@ -148,6 +154,7 @@ public class RegistrationFormValidation {
 				System.out.println("ReEntered Password");
 
 			} else
+				RegistrationFormValidation.alertHandling(driver)
 				System.out.println("Re Entered Validation Failed");
 
 		}
@@ -160,11 +167,13 @@ public class RegistrationFormValidation {
 			driver.findElement(By.id("signupAgreement")).click();
 			e5.click();
 		} else
+			RegistrationFormValidation.alertHandling(driver)
 			System.out.println("Privacy Policy Validation Failed");
 
 		if (RegistrationFormValidation.alertHandling(driver).equals("Success")) {
 			System.out.println("All Validation are passed Successfully");
 		} else
+			RegistrationFormValidation.alertHandling(driver)
 			System.out.println("Validations Fails");
 
 	}
