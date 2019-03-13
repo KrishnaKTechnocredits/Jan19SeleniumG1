@@ -26,8 +26,8 @@ public class EmployeeManager {
 	public static void main(String[] args) {
 
 		HashMap<String, Integer> hn = new HashMap<String, Integer>();
-		LinkedList<String> l1 = new LinkedList<String>();
-		LinkedList<String> l2 = new LinkedList<String>();
+		LinkedList<String> empid = new LinkedList<String>();
+		LinkedList<String> empmanager = new LinkedList<String>();
 		WebDriver driver = Init.initChromeDriver();
 		driver.get("http://automationbykrishna.com/index.html#");
 		driver.findElement(By.xpath("//a[@id='demotable']")).click();
@@ -37,16 +37,16 @@ public class EmployeeManager {
 		hn = emp.Findmanagerdetails(driver);
 		emp.displaymanagerdetails(hn);
 		emp.findmaxemployee(hn);
-		l1 = emp.storeemployeeid(driver);
-		l2 = emp.storeemployeename(driver);
-		emp.findduplicate(l1, l2);
+		empid = emp.storeemployeeid(driver);
+		empmanager = emp.storeemployeename(driver);
+		emp.findduplicate(empid, empmanager);
 		driver.close();
 
 	}
 
 	HashMap<String, Integer> Findmanagerdetails(WebDriver driver) {
 		HashMap<String, Integer> hn = new HashMap<String, Integer>();
-		int rowcount = driver.findElements(By.xpath("//table[@class='table table-striped']//tr")).size();
+		int rowcount = driver.findElements(By.xpath("//table[@class='table table-striped']//tbody/tr")).size();
 		for (int i = 1; i < rowcount; i++) {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 			String managerid = driver
@@ -85,34 +85,34 @@ public class EmployeeManager {
 		System.out.println("4) Manager with maximum Employees is :" + manager + " and no of employees are :" + maxemp);
 	}
 
-	void findduplicate(LinkedList<String> l1, LinkedList<String> l2) {
+	void findduplicate(LinkedList<String> empid, LinkedList<String> empmanager) {
 		HashSet<String> hs1 = new HashSet<String>();
-		for (int index = 0; index < l1.size(); index++) {
-			if (hs1.add((l1.get(index))) == false)
-				System.out.println("Duplicate employee id is " + l1.get(index));
-			if (hs1.add((l2.get(index))) == false)
-				System.out.println("Duplicate employee name is " + l2.get(index));
+		for (int index = 0; index < empid.size(); index++) {
+			if (hs1.add((empid.get(index))) == false)
+				System.out.println("Duplicate employee id is " + empid.get(index));
+			if (hs1.add((empmanager.get(index))) == false)
+				System.out.println("Duplicate employee name is " + empmanager.get(index));
 
 		}
 	}
 
 	LinkedList<String> storeemployeeid(WebDriver driver) {
-		LinkedList<String> l1 = new LinkedList<String>();
+		LinkedList<String> empid = new LinkedList<String>();
 		int rowcount = driver.findElements(By.xpath("//table[@class='table table-striped']//tr")).size();
 		for (int i = 1; i < rowcount; i++) {
-			l1.add(driver.findElement(By.xpath("//table[@class='table table-striped']//tbody/tr[" + i + "]/td[2]"))
+			empid.add(driver.findElement(By.xpath("//table[@class='table table-striped']//tbody/tr[" + i + "]/td[2]"))
 					.getText());
 		}
-		return l1;
+		return empid;
 	}
 
 	LinkedList<String> storeemployeename(WebDriver driver) {
-		LinkedList<String> l2 = new LinkedList<String>();
+		LinkedList<String> empmanager = new LinkedList<String>();
 		int rowcount = driver.findElements(By.xpath("//table[@class='table table-striped']//tr")).size();
 		for (int i = 1; i < rowcount; i++) {
-			l2.add(driver.findElement(By.xpath("//table[@class='table table-striped']//tbody/tr[" + i + "]/td[3]"))
+			empmanager.add(driver.findElement(By.xpath("//table[@class='table table-striped']//tbody/tr[" + i + "]/td[3]"))
 					.getText());
 		}
-		return l2;
+		return empmanager;
 	}
 }
