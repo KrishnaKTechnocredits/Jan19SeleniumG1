@@ -60,7 +60,7 @@ public class Assignment3 {
 		} else {
 			System.out.println("text NOT verified on presseing Cancel");
 		}
-
+		driver.quit();
 	}
 
 }
