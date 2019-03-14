@@ -32,7 +32,7 @@ public class EmployeeManager {
 		driver.get("http://automationbykrishna.com/index.html#");
 		driver.findElement(By.xpath("//a[@id='demotable']")).click();
 		System.out.println("Able to click on demo");
-		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		EmployeeManager emp = new EmployeeManager();
 		hn = emp.Findmanagerdetails(driver);
 		emp.displaymanagerdetails(hn);
