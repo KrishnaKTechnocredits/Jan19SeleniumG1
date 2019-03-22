@@ -17,13 +17,16 @@ public class GmailLogin {
 		Properties prop = PropFileOperation.loadProp();
 		driver.get("https://www.gmail.com");
 		System.out.println("Browser Open");
+		Thread.sleep(2000);
 		// driver.manage().window().maximize();
 		driver.findElement(By.id("identifierId")).sendKeys(prop.getProperty("email"));
+		Thread.sleep(2000);
 		System.out.println("email address entered");
 		// it will return two webelemnts
 		// driver.findElement(By.xpath("//span[@class='RveJvd snByac']")).click();
 		// driver.findElement(By.id("identifierNext")).click();
 		driver.findElement(By.id("identifierNext")).submit();
+		Thread.sleep(2000);
 		System.out.println("cliked on next");
 		Thread.sleep(2000);
 		driver.findElement(By.name("password")).sendKeys(prop.getProperty("password"));
