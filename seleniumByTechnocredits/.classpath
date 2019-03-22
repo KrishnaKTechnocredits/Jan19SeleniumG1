@@ -14,6 +14,6 @@
 	<classpathentry kind="lib" path="lib/okhttp-3.10.0.jar"/>
 	<classpathentry kind="lib" path="lib/okio-1.14.1.jar"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Apache poi"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ApachePoi"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
