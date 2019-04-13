@@ -46,5 +46,6 @@ public class JavaScriptConfirmationMessage {
 			System.out.println("User Pressed on Cancel button");
 		}
 
+	driver.close();	
 	}
 }

@@ -10,6 +10,8 @@ import util.Init;
 
 public class RegistrationFormValidation {
 
+
+	//Method to Perform Scroll to particular Element
 	static WebElement ScrollFunction(WebDriver driver, String path) {
 		WebElement element = driver.findElement(By.xpath(path));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -18,6 +20,8 @@ public class RegistrationFormValidation {
 		return element;
 	}
 
+
+	//Method to Handled Alert and return alert Text
 	static String alertHandling(WebDriver driver) {
 		Alert al = driver.switchTo().alert();
 		String alertMsg = al.getText();
@@ -56,9 +60,9 @@ public class RegistrationFormValidation {
 			driver.findElement(By.id("address")).sendKeys("Pune");
 			System.out.println("Address Entered");
 		} else
-			System.out.println("Address Validation Failed");
-
-		// Other Email ID Validation Checks
+		RegistrationFormValidation.alertHandling(driver)
+	
+      // Other Email ID Validation Checks
 		WebElement e4 = RegistrationFormValidation.ScrollFunction(driver, "//button[@id='btnsubmitsignUp']");
 		e4.click();
 
@@ -67,7 +71,8 @@ public class RegistrationFormValidation {
 			driver.findElement(By.id("useremail")).sendKeys("test@test.com");
 			System.out.println("Other Email ID Entered");
 		} else
-			System.out.println("Other Email ID Validation Failed");
+
+			RegistrationFormValidation.alertHandling(driver)
 
 		// City Field Validation
 		WebElement e5 = RegistrationFormValidation.ScrollFunction(driver, "//button[@id='btnsubmitsignUp']");
@@ -83,8 +88,8 @@ public class RegistrationFormValidation {
 				driver.findElement(By.id("usercity")).sendKeys("Pune");
 				System.out.println("Valid City Entered");
 			} else
-				System.out.println("Valid City Validation Failed");
 
+				RegistrationFormValidation.alertHandling(driver)
 		}
 
 		// Company Name Field Validation
@@ -97,7 +102,7 @@ public class RegistrationFormValidation {
 			System.out.println("Current Organization Entered");
 
 		} else
-			System.out.println("Current Organization Validation Failed");
+			RegistrationFormValidation.alertHandling(driver)
 
 		// User Name Name Field Validation
 		e5.click();
@@ -113,7 +118,8 @@ public class RegistrationFormValidation {
 				System.out.println("User Name Entered");
 
 			} else
-				System.out.println("User Name Validation Failed");
+
+				RegistrationFormValidation.alertHandling(driver)
 
 		}
 
@@ -130,7 +136,7 @@ public class RegistrationFormValidation {
 				System.out.println("Password Entered");
 
 			} else
-				System.out.println("Password Validation Failed");
+				RegistrationFormValidation.alertHandling(driver)
 
 		}
 
@@ -146,8 +152,7 @@ public class RegistrationFormValidation {
 				System.out.println("ReEntered Password");
 
 			} else
-				System.out.println("Re Entered Validation Failed");
-
+				RegistrationFormValidation.alertHandling(driver)
 		}
 
 		// Privacy Policy Field Validation
@@ -158,12 +163,13 @@ public class RegistrationFormValidation {
 			driver.findElement(By.id("signupAgreement")).click();
 			e5.click();
 		} else
-			System.out.println("Privacy Policy Validation Failed");
+
+			RegistrationFormValidation.alertHandling(driver)
 
 		if (RegistrationFormValidation.alertHandling(driver).equals("Success")) {
 			System.out.println("All Validation are passed Successfully");
 		} else
-			System.out.println("Validations Fails");
+			RegistrationFormValidation.alertHandling(driver)
 
 	}
 
